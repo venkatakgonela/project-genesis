@@ -110,4 +110,4 @@ Genesis follows [Semantic Versioning](https://semver.org/). The `.ai-eos.yaml` m
 
 ## License
 
-MIT, see [LICENSE](LICENSE).
+MIT, see [LICENSE](LICENSE)., see [LICENSE](LICENSE).
