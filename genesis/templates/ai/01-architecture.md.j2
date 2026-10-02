@@ -31,3 +31,7 @@ graph TD
 - **Languages / Frameworks**: {{ project_type | default('default') }}
 - **Database / Storage**: TODO: Database type
 - **External Integrations**: TODO: Third-party APIs / services
+{% if constraints -%}
+- **Constraints**:
+{{ constraints }}
+{% endif -%}

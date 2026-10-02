@@ -14,18 +14,40 @@ ai-eos-metadata:
 ---
 
 ## 1. Mission
+{% if purpose -%}
+{{ purpose }}
+{%- else -%}
 - TODO: Outline the core purpose of this project and what problem it solves.
+{%- endif %}
 
 ## 2. Goals & Non-Goals
 - **Goals**:
+{% if requirements -%}
+{{ requirements }}
+{%- else -%}
   - TODO: Key goal 1
   - TODO: Key goal 2
+{%- endif %}
 - **Non-Goals**:
+{% if non_goals -%}
+{{ non_goals }}
+{%- else -%}
   - TODO: What is explicitly out of scope for this project?
+{%- endif %}
 
 ## 3. Success Metrics
 - TODO: List measurable outcomes that indicate project success.
 
+{% if users -%}
+## Users
+{{ users }}
+
+{% endif -%}
+{% if scope -%}
+## Scope
+{{ scope }}
+
+{% endif -%}
 ## 4. Stakeholders
 - **Product Owner**: {{ project_owner | default('TBD') }}
 - **Technical Lead**: TODO: Name/Team

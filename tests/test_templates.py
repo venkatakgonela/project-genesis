@@ -54,6 +54,11 @@ class TestTemplatesRender:
             "agent_role": "developer",
             "context_pack": "ai/context-packs/context-pack-default.md",
             "task_file": "ai/tasks/TASK-001-example.md",
+            "task_id": "TASK-001",
+            "task_name": "Test Task",
+            "task_slug": "test-task",
+            "created_date": "2026-06-02",
+            "status": "Draft",
         }
         rendered = render(template_name, context)
         assert (
