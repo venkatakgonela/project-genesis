@@ -40,6 +40,8 @@ genesis --help
 | `genesis brief <file>` | Generate AI-EOS documents from a project brief |
 | `genesis task <name>` | Create a numbered task file in `ai/tasks/` |
 | `genesis migrate` | Add missing AI-EOS files to an existing project |
+| `genesis analyze` | Inspect project stack signals, AI-EOS inventory, and likely quality gates |
+| `genesis doctor` | Diagnose AI-EOS structure, placeholders, stale docs, and context hygiene |
 
 ## Quick Start
 
@@ -74,6 +76,9 @@ uv run pytest -v
 uv run ruff check .
 uv run mypy genesis/
 ```
+
+Use `genesis doctor` inside a project that has been initialised with AI-EOS to check structure,
+placeholder drift, stale review dates, and context-pack hygiene.
 
 ## Design Principles
 

@@ -14,27 +14,41 @@ ai-eos-metadata:
 
 ```mermaid
 graph TD
-    A[Phase 1: Research] --> B[Phase 2: Plan]
+    A[Phase 1: Context Compile] --> B[Phase 2: Plan]
     B --> C[Phase 3: Execute]
     C --> D[Phase 4: Verify]
-    D --> E[Phase 5: Record Run]
+    D --> E[Phase 5: Record And Improve]
 ```
 
-### Phase 1: Research
-- Analyse the issue, target repository, and related docs.
-- Locate code areas of interest. Do NOT edit code yet.
+### Phase 1: Context Compile
+- Read `AGENTS.md` and the specific task/spec/user request.
+- Load only the references needed for the touched surface area.
+- Locate code, tests, and prior decisions of interest. Do not edit code yet.
+- Note context gaps, stale docs, or unresolved decisions before implementation.
 
 ### Phase 2: Plan
-- Write down a step-by-step implementation strategy.
-- Detail file modifications, tests, and database schema updates.
+- Write a step-by-step implementation strategy for the smallest coherent slice.
+- Detail expected file modifications, tests, data/schema updates, and risks.
+- Escalate for human approval before broad refactors, destructive actions, new integrations, or scope expansion.
 
 ### Phase 3: Execute
 - Apply modifications using appropriate file edit tools.
-- Maintain existing codebase comments and docstrings.
+- Keep changes scoped to the plan and existing architecture.
+- Maintain existing comments, docstrings, and public behavior unless the task explicitly changes them.
 
 ### Phase 4: Verify
-- Run project test suites.
-- Run quality gate commands (lint, format, type checks).
+- Run the relevant automated tests first, then broader quality gates when risk warrants it.
+- Verify migrations, UI flows, data integrity, security/privacy boundaries, and error states when touched.
+- If a gate cannot run, record the reason and residual risk.
 
-### Phase 5: Record Run
+### Phase 5: Record And Improve
 - Update or create a run summary in `ai/runs/RUN-XXX.md`.
+- Include context loaded, files changed, verification results, risks, follow-up tasks, and doc updates.
+- Update `ai/` architecture, ADRs, risk register, repo map, or roadmap when implementation changes reality.
+
+## 2. Anti-Bloat Rules
+
+- Do not load every file under `ai/` by default.
+- Prefer task-scoped context packs and current source files over old run logs.
+- Treat context as finite: curate it, summarize stale history, and discard irrelevant branches.
+- Use `genesis doctor` periodically to find missing files, unresolved placeholders, stale review dates, and broad context packs.

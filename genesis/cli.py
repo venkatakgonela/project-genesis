@@ -5,7 +5,7 @@ from __future__ import annotations
 import typer
 
 from genesis import __version__
-from genesis.commands import brief, init, migrate, new, task
+from genesis.commands import analyze, brief, doctor, init, migrate, new, task
 
 app = typer.Typer(
     name="genesis",
@@ -47,6 +47,8 @@ app.command("new")(new.run)
 app.command("brief")(brief.run)
 app.command("task")(task.run)
 app.command("migrate")(migrate.run)
+app.command("doctor")(doctor.run)
+app.command("analyze")(analyze.run)
 
 
 # ---------------------------------------------------------------------------
@@ -58,30 +60,6 @@ def _reserved(name: str) -> None:
         err=True,
     )
     raise typer.Exit(code=1)
-
-
-@app.command(hidden=True)
-def analyze() -> None:
-    """[v2] Analyse project structure against AI-EOS standards.
-
-    Backlog Notes:
-    - Verify existence of all manifest-declared files on disk.
-    - Parse front matter and validate required fields.
-    - Check for structural drift in the target project.
-    """
-    _reserved("analyze")
-
-
-@app.command(hidden=True)
-def doctor() -> None:
-    """[v2] Diagnose AI-EOS health and surface configuration issues.
-
-    Backlog Notes:
-    - Check for malformed front matter syntax.
-    - Detect missing variables or unresolved TBD placeholders.
-    - Validate directory structure alignment with manifest schema.
-    """
-    _reserved("doctor")
 
 
 @app.command(hidden=True)

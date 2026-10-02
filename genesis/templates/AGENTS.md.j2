@@ -19,7 +19,8 @@ ai-eos-metadata:
 All AI agents operating in this repository must strictly adhere to the following rules:
 
 - **Read AGENTS.md first**: Always parse and understand this file before analysing other parts of the workspace.
-- **Read task/context files before editing**: Before modifying any source files, load and read the relevant technical specifications, tasks (`ai/tasks/`), and context files to understand instructions and constraints.
+- **Read task/context files before editing**: Before modifying any source files, load the specific task/spec and the smallest sufficient set of supporting context files.
+- **Avoid context bloat**: Do not load every file under `ai/` by default. Prefer task-scoped context packs, targeted source reads, and brief summaries of old run history.
 - **Plan before implementation**: Formulate a step-by-step implementation plan and write it down or request approval before executing changes.
 - **Ask before expanding scope**: Do not add extra features or refactor unrelated code. If you believe the scope should be expanded, ask the user.
 - **Preserve existing behavior**: Ensure that comments, docstrings, formatting, and behaviors not targeted by the task are preserved.
@@ -34,6 +35,8 @@ All AI agents operating in this repository must strictly adhere to the following
 - **Coding Standards**: Refer to [05-coding-standards.md](file:///ai/05-coding-standards.md) for style requirements.
 - **Verification Commands**:
   - TODO: Document precise local check commands (e.g., tests, linters).
+- **Health Check**:
+  - `genesis doctor` — Check AI-EOS structure, placeholders, stale review dates, and context-pack hygiene.
 
 ---
 
