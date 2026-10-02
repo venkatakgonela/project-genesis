@@ -1,0 +1,13 @@
+# ai-eos-metadata:
+#   purpose: "Agent run configuration settings"
+#   how_to_use: "Read by agent runners to execute tasks and load context packs"
+#   generated_by: "Genesis"
+#   regeneration: "Skipped by default. Overwritten only with --force."
+
+id: "{{ run_id | default('RUN-001') }}"
+name: "{{ run_name | default('TBD') }}"
+goal: "{{ run_goal | default('TBD') }}"
+agent_role: "{{ agent_role | default('TBD') }}"
+context_pack: "{{ context_pack | default('ai/context-packs/context-pack-default.md') }}"
+tasks:
+  - "{{ task_file | default('ai/tasks/TASK-001-example.md') }}"

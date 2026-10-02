@@ -151,7 +151,7 @@ Written into a target project by `genesis init` or `genesis new` (Phase 3):
 .ai-eos.yaml
 AGENTS.md
 ai/
-  00-project-charter.md      09-risk-register.md
+  00-project-charter.md      
   01-architecture.md         specs/  SPEC-000-template.md
   02-domain-model.md         tasks/  TASK-000-template.md
   03-repo-map.md             skills/ (6 skill files)

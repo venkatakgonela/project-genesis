@@ -1,0 +1,66 @@
+# ai-eos-metadata:
+#   purpose: "AI-EOS Project Manifest"
+#   how_to_use: "Read by Genesis CLI; do not modify manually"
+#   generated_by: "Genesis"
+#   regeneration: "Managed by Genesis CLI during init, new, and migrate commands"
+#   ai_eos_version: "1.0"
+
+genesis_version: "{{ genesis_version | default('0.1.0') }}"
+created: "{{ created | default('TBD') }}"
+project:
+  name: "{{ project_name | default('TBD') }}"
+  type: "{{ project_type | default('default') }}"
+  owner: "{{ project_owner | default('TBD') }}"
+  description: "{{ project_description | default('TBD') }}"
+archetype: "{{ archetype | default('default') }}"
+manifest:
+  - path: AGENTS.md
+    template: AGENTS.md.j2
+  - path: ai/00-project-charter.md
+    template: ai/00-project-charter.md.j2
+  - path: ai/01-architecture.md
+    template: ai/01-architecture.md.j2
+  - path: ai/02-domain-model.md
+    template: ai/02-domain-model.md.j2
+  - path: ai/03-repo-map.md
+    template: ai/03-repo-map.md.j2
+  - path: ai/04-decisions.md
+    template: ai/04-decisions.md.j2
+  - path: ai/05-coding-standards.md
+    template: ai/05-coding-standards.md.j2
+  - path: ai/06-agentic-sdlc.md
+    template: ai/06-agentic-sdlc.md.j2
+  - path: ai/07-observability.md
+    template: ai/07-observability.md.j2
+  - path: ai/08-risk-register.md
+    template: ai/08-risk-register.md.j2
+  - path: ai/roadmap/ROADMAP.md
+    template: ai/roadmap/ROADMAP.md.j2
+  - path: ai/specs/SPEC-000-template.md
+    template: ai/specs/SPEC-000-template.md.j2
+  - path: ai/tasks/TASK-000-template.md
+    template: ai/tasks/TASK-000-template.md.j2
+  - path: ai/epics/EPIC-000-template.md
+    template: ai/epics/EPIC-000-template.md.j2
+  - path: ai/features/FEATURE-000-template.md
+    template: ai/features/FEATURE-000-template.md.j2
+  - path: ai/agents/AGENT-000-template.md
+    template: ai/agents/AGENT-000-template.md.j2
+  - path: ai/context-packs/context-pack-default.md
+    template: ai/context-packs/context-pack-default.md.j2
+  - path: ai/skills/feature-development.md
+    template: ai/skills/feature-development.md.j2
+  - path: ai/skills/regression-testing.md
+    template: ai/skills/regression-testing.md.j2
+  - path: ai/skills/refactoring.md
+    template: ai/skills/refactoring.md.j2
+  - path: ai/skills/database-migration.md
+    template: ai/skills/database-migration.md.j2
+  - path: ai/skills/ui-change.md
+    template: ai/skills/ui-change.md.j2
+  - path: ai/skills/documentation-update.md
+    template: ai/skills/documentation-update.md.j2
+  - path: ai/runs/RUN-000-template.md
+    template: ai/runs/RUN-000-template.md.j2
+  - path: ai/runs/run.yaml
+    template: ai/runs/run.yaml.j2

@@ -62,17 +62,35 @@ def _reserved(name: str) -> None:
 
 @app.command(hidden=True)
 def analyze() -> None:
-    """[v2] Analyse project structure against AI-EOS standards."""
+    """[v2] Analyse project structure against AI-EOS standards.
+
+    Backlog Notes:
+    - Verify existence of all manifest-declared files on disk.
+    - Parse front matter and validate required fields.
+    - Check for structural drift in the target project.
+    """
     _reserved("analyze")
 
 
 @app.command(hidden=True)
 def doctor() -> None:
-    """[v2] Diagnose AI-EOS health and surface configuration issues."""
+    """[v2] Diagnose AI-EOS health and surface configuration issues.
+
+    Backlog Notes:
+    - Check for malformed front matter syntax.
+    - Detect missing variables or unresolved TBD placeholders.
+    - Validate directory structure alignment with manifest schema.
+    """
     _reserved("doctor")
 
 
 @app.command(hidden=True)
 def refresh() -> None:
-    """[v2] Refresh AI-EOS documents from updated templates."""
+    """[v2] Refresh AI-EOS documents from updated templates.
+
+    Backlog Notes:
+    - Regenerate default files from original templates.
+    - Perform a dry-run validation of changes.
+    - Preserve user-modified context segments during update.
+    """
     _reserved("refresh")

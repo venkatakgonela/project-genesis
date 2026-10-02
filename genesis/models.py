@@ -41,6 +41,10 @@ class AiEosManifest:
     Records which genesis version created the structure, the project
     metadata, and a full list of generated files. Used by ``genesis migrate``
     to compute structural diffs.
+
+    Reserved Future Fields:
+        ai_eos_version (str): Reserved for version 1.0 of the AI-EOS spec.
+                              (Current value defaults to "1.0" in documentation)
     """
 
     genesis_version: str
